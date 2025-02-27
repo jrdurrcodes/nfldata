@@ -471,7 +471,7 @@ let confTeams = data.filter(team => team.conference == conf)
 
 // //let afcTeams = data.filter(team=> team.conference == 'afc')
 
-/
+
 
 const nflTeams =(arr)=> {
 
@@ -501,7 +501,7 @@ const getDivTeams =(conf, div)=> {
     // for (let obj of division) {
     //     teams= [...teams, obj.team]
     // }
-console.log(teams)
+//console.log(teams)
 }
 
 getDivTeams('afc', 'south')
@@ -522,7 +522,7 @@ const sortTeams = ()=> {
     }
 
 }
-sort teams ()
+sortTeams()
 
 
 // 6. make a card for each team and display it on the browser
@@ -532,9 +532,75 @@ sort teams ()
 // location
 // city
 // state
-// conference
-// division
 // super bowl wins 
-
 // when a card is clicked, change display to notable players
+
+
+const cardRow = document.getElementById('cardRow')
+
+data.forEach(nfl => {
+
+    const col = document.createElement('div')
+    col.classList.add('col')
+
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.setAttribute('data-cardId', nfl.id)
+
+    const cardBody = document.createElement('div')
+    cardBody.classList.add('card-body')
+
+    console.log(card)
+
+    const teamName = document.createElement('p')
+    teamName.classList.add('card-text', 'text-capitalize', 'text-success', 'fst-italic')
+    teamName.innerText = `${nfl.team}`
+
+    const location = document.createElement('div')
+    location.classList.add('card-text', 'text-capitalize')
+    location.innerText = `${nfl.location}`
+
+    const city = document.createElement('p')
+    city.classList.add('card-text', 'text-capitalize')
+    city.innerText = `${nfl.city}`
+
+    const state = document.createElement('p')
+    state.classList.add('card-text', 'text-capitalize')
+    state.innerText = `${nfl.state}`
+
+    // const  conference = document.createElement('p')
+    // conference.classList.add('card-text', 'text-capitalize')
+    // conference.innerText = `${nfl.conference}`
+
+    // const division = document.createElement('p')
+    // division.classList.add('card-text-', 'text-capitalize')
+    // division.innerText = `${nfl.division}`
+
+    const superBowlWins = document.createElement('p')
+    superBowlWins.classList.add('card-text', 'text-capitalize')
+    superBowlWins.innerText = `${nfl.superBowlWins}`
+
+
+cardBody.appendChild(teamName)
+cardBody.appendChild(location)
+cardBody.appendChild(city)
+cardBody.appendChild(state)
+cardBody.appendChild(superBowlWins)
+
+col.appendChild(card)
+card.appendChild(cardBody)
+cardRow.appendChild(col)
+
+
+})
+
+
+//must appendChild to show cards
+
+
+
+
+
+
+
 
