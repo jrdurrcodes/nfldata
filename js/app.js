@@ -557,15 +557,15 @@ data.forEach(nfl => {
     teamName.innerText = `${nfl.team}`
 
     const location = document.createElement('div')
-    location.classList.add('card-text', 'text-capitalize')
+    location.classList.add('card-text', 'text-capitalize', 'text-success', 'fst-italic')
     location.innerText = `${nfl.location}`
 
     const city = document.createElement('p')
-    city.classList.add('card-text', 'text-capitalize')
+    city.classList.add('card-text', 'text-capitalize', 'text-success', 'fst-italic')
     city.innerText = `${nfl.city}`
 
     const state = document.createElement('p')
-    state.classList.add('card-text', 'text-capitalize')
+    state.classList.add('card-text', 'text-capitalize', 'text-success', 'fst-italic')
     state.innerText = `${nfl.state}`
 
     // const  conference = document.createElement('p')
@@ -591,8 +591,18 @@ col.appendChild(card)
 card.appendChild(cardBody)
 cardRow.appendChild(col)
 
+// card.addEventListener("click", ()=> )
 
+    //code doesn't like the addEventListener. it doesn't show the cards
 })
+
+cardRow(notablePlayers)
+
+// let display = []
+
+// const getDisplay = (arr, notablePlayers)=> {
+//     arr.forEach(item => item.
+// }
 
 
 //must appendChild to show cards
